@@ -337,25 +337,12 @@ Bundle-DocURL: http://www.eclipse.org/sisu/
           </executions>
         </plugin>
         <plugin>
-          <groupId>org.sonatype.plugins</groupId>
-          <artifactId>nexus-staging-maven-plugin</artifactId>
-          <version>1.6.13</version>
-          <extensions>true</extensions>
-          <configuration>
-            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-            <serverId>sonatype-nexus-staging</serverId>
-          </configuration>
-        </plugin>
-        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.4.2</version>
         </plugin>
-        <plugin>
-          <groupId>com.diffplug.spotless</groupId>
-          <artifactId>spotless-maven-plugin</artifactId>
-          <version>2.35.0</version>
-        </plugin>
+        
+        
       </plugins>
     </pluginManagement>
 
@@ -385,22 +372,6 @@ Bundle-DocURL: http://www.eclipse.org/sisu/
         </file>
       </activation>
       <build>
-        <plugins>
-          <plugin>
-            <groupId>com.diffplug.spotless</groupId>
-            <artifactId>spotless-maven-plugin</artifactId>
-            <configuration>
-              <java>
-                <eclipse>
-                  <file>${basedir}/../sisu-eclipse-codestyle.xml</file>
-                </eclipse>
-                <includes>
-                  <include>src/**/*.java</include>
-                </includes>
-              </java>
-            </configuration>
-          </plugin>
-        </plugins>
       </build>
     </profile>
     <profile>
@@ -419,11 +390,7 @@ Bundle-DocURL: http://www.eclipse.org/sisu/
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
           </plugin>
-          <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <extensions>true</extensions>
-          </plugin>
+          
         </plugins>
       </build>
     </profile>
